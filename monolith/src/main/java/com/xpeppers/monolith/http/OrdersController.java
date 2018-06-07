@@ -12,12 +12,12 @@ class OrdersController {
     }
 
     String handle(Request request, Response response) {
-        String product_code = request.queryParams("product_code");
-        String productQuantity = request.queryParams("product_quantity");
-        Integer product_quantity = Integer.valueOf(productQuantity);
+        String productCode = request.queryParams("product_code");
+        Integer productQuantity = Integer.valueOf(request.queryParams("product_quantity"));
 
-        if (warehouse.isAvailable(product_code, product_quantity))
+        if (warehouse.isAvailable(productCode, productQuantity)) {
             return "order confirmed";
+        }
 
         return "product not available";
     }
