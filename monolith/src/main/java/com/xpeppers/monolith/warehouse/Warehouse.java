@@ -5,11 +5,11 @@ import java.util.Map;
 
 public class Warehouse {
     private static final Map<String, Integer> products = new HashMap<String, Integer>() {{
-        put("1111", 1);
-        put("2222", 2);
-        put("3333", 3);
-        put("4444", 4);
-        put("5555", 5);
+        put("111", 1);
+        put("222", 2);
+        put("333", 3);
+        put("444", 4);
+        put("555", 5);
     }};
 
     public boolean isAvailable(String productCode, Integer productQuantity) {
