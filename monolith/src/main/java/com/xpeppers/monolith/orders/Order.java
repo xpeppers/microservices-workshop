@@ -1,4 +1,4 @@
-package com.xpeppers.monolith;
+package com.xpeppers.monolith.orders;
 
 import java.util.UUID;
 

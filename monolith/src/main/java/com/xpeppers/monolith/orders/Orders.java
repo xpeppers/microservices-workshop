@@ -1,14 +1,14 @@
-package com.xpeppers.monolith.persistency;
+package com.xpeppers.monolith.orders;
 
-import com.xpeppers.monolith.Order;
+import com.xpeppers.monolith.orders.Order;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderRepository {
+public class Orders {
     private static final List<Order> orders = new ArrayList<>();
 
-    public void confirmed(Order order) {
+    public void add(Order order) {
         orders.add(order);
     }
 
