@@ -12,7 +12,12 @@ public class Warehouse {
         put("5555", 5);
     }};
 
-    public boolean isAvailable(String product_code, Integer product_quantity) {
-        return products.get(product_code) >= product_quantity;
+    public boolean isAvailable(String productCode, Integer productQuantity) {
+        return products.get(productCode) >= productQuantity;
+    }
+
+    public void pickProducts(String productCode, Integer productQuantity) {
+        int updatedProductInventory = products.get(productCode) - productQuantity;
+        products.put(productCode, updatedProductInventory);
     }
 }
