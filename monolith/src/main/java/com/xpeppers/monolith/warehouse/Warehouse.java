@@ -2,6 +2,7 @@ package com.xpeppers.monolith.warehouse;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 public class Warehouse {
     private static final Map<String, Integer> products = new HashMap<String, Integer>() {{
@@ -12,7 +13,7 @@ public class Warehouse {
         put("555", 5);
     }};
 
-    public boolean pickProducts(String productCode, Integer productQuantity) {
+    public boolean pickProducts(UUID orderId, String productCode, Integer productQuantity) {
         if (isAvailable(productCode, productQuantity)) {
             pick(productCode, productQuantity);
             return true;
