@@ -47,3 +47,15 @@ Response:
     }
 ]
 ```
+
+#### Build Docker image
+
+```
+docker build -t commerce.monolith .
+```
+
+#### Run Docker container
+
+```
+docker run -it --rm --name monolith -p 4567:4567 commerce.monolith:latest
+```
