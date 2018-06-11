@@ -18,7 +18,7 @@ java -jar target/warehouse-1.0-SNAPSHOT-jar-with-dependencies.jar
 After the application is started, it will be available at the address:
 
 `
-http://localhost:4567
+http://localhost:8181
 `
 
 #### Usage examples
