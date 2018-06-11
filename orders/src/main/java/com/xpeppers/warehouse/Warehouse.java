@@ -4,8 +4,6 @@ import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.UUID;
 
 public class Warehouse {
