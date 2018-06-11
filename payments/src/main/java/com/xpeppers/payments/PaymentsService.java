@@ -22,10 +22,12 @@ public class PaymentsService {
     }
 
     private boolean orderPaid(UUID orderId) {
+        /*TODO: implement me*/
         return true;
     }
 
     private boolean prepareShippingFor(UUID orderId) {
+        /*TODO: implement me*/
         return true;
     }
 }
