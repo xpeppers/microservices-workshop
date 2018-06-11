@@ -3,7 +3,7 @@ package com.xpeppers.monolith.orders;
 import java.util.UUID;
 
 public class Order {
-    private final UUID id;
+    final UUID id;
     private final String productCode;
     private final Integer productQuantity;
     private String status;
@@ -19,7 +19,9 @@ public class Order {
         return id;
     }
 
-    public void reserved() {
-        status = "reserved";
+    public Order reserved() {
+        Order order = new Order(id, productCode, productQuantity);
+        order.status = "reserved";
+        return order;
     }
 }

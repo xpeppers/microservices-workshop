@@ -34,8 +34,7 @@ class OrdersController {
         orderRepository.add(order);
 
         if (warehouse.pickProducts(order.id(), productCode, productQuantity)) {
-            order.reserved();
-            orderRepository.update(order);
+            orderRepository.update(order.reserved());
             return true;
         }
 

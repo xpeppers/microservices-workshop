@@ -1,8 +1,6 @@
 package com.xpeppers.monolith.warehouse;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 public class Warehouse {
     private static final Map<String, Integer> products = new HashMap<String, Integer>() {{
@@ -13,17 +11,20 @@ public class Warehouse {
         put("555", 5);
     }};
 
+    private static final List<ReservedProduct> reservedProcucts = new ArrayList<>();
+
     public boolean pickProducts(UUID orderId, String productCode, Integer productQuantity) {
         if (isAvailable(productCode, productQuantity)) {
-            pick(productCode, productQuantity);
+            reserveFor(orderId, productCode, productQuantity);
             return true;
         }
         return false;
     }
 
-    private void pick(String productCode, Integer productQuantity) {
+    private void reserveFor(UUID orderId, String productCode, Integer productQuantity) {
         int updatedProductInventory = products.get(productCode) - productQuantity;
         products.put(productCode, updatedProductInventory);
+        reservedProcucts.add(new ReservedProduct(orderId, productCode, productQuantity));
     }
 
     private boolean isAvailable(String productCode, Integer productQuantity) {
