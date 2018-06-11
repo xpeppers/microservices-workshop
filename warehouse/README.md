@@ -12,7 +12,7 @@ mvn package
 #### How to run the application
 
 `
-java -jar target/monolith-1.0-SNAPSHOT-jar-with-dependencies.jar
+java -jar target/warehouse-1.0-SNAPSHOT-jar-with-dependencies.jar
 `
 
 After the application is started, it will be available at the address:
