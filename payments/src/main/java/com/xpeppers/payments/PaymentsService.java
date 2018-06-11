@@ -1,9 +1,5 @@
 package com.xpeppers.payments;
 
-import com.mashape.unirest.http.HttpResponse;
-import com.mashape.unirest.http.Unirest;
-import com.mashape.unirest.http.exceptions.UnirestException;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -25,21 +21,11 @@ public class PaymentsService {
         return new ArrayList<>(payments);
     }
 
-    private boolean prepareShippingFor(UUID orderId) {
-        return true;
-    }
-
     private boolean orderPaid(UUID orderId) {
         return true;
     }
 
-    private boolean reserveProductsFor(UUID orderId, String productCode, Integer productQuantity) throws UnirestException {
-        HttpResponse<String> response = Unirest.post("http://localhost:8181/pickProducts")
-                .field("order_id", orderId)
-                .field("product_code", productCode)
-                .field("product_quantity", productQuantity)
-                .asString();
-
-        return response.getStatus() == 201;
+    private boolean prepareShippingFor(UUID orderId) {
+        return true;
     }
 }
