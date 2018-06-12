@@ -1,6 +1,8 @@
 version: '3'
 services:
   orders:
+    depends_on:
+      - warehouse
     image: "commerce.orders:latest"
     ports:
       - 8080:4567
@@ -11,9 +13,17 @@ services:
     ports:
       - 8181:8181
   payments:
+    depends_on:
+      - rabbitmq
     image: "commerce.payments:latest"
     ports:
       - 8282:8282
+    environment:
+      - RABBITMQ_HOST=rabbitmq
+  notifications:
+    depends_on:
+      - rabbitmq
+    image: "commerce.notifications:latest"
     environment:
       - RABBITMQ_HOST=rabbitmq
   rabbitmq:
