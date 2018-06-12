@@ -3,10 +3,21 @@ services:
   orders:
     image: "commerce.orders:latest"
     ports:
-      - 4567:4567
+      - 8080:4567
     environment:
       - WAREHOUSE_ENDPOINT=http://warehouse:8181
   warehouse:
     image: "commerce.warehouse:latest"
     ports:
       - 8181:8181
+  payments:
+    image: "commerce.payments:latest"
+    ports:
+      - 8282:8282
+    environment:
+      - RABBITMQ_HOST=rabbitmq
+  rabbitmq:
+    image: "rabbitmq:3-management"
+    ports:
+      - 15672:15672
+      - 5672:5672
