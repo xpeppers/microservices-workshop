@@ -7,6 +7,12 @@ import com.mashape.unirest.http.exceptions.UnirestException;
 import java.util.UUID;
 
 public class Warehouse {
+    private String warehouseEndpoint;
+
+    public Warehouse(String warehouseEndpoint) {
+        this.warehouseEndpoint = warehouseEndpoint;
+    }
+
     public boolean pickProducts(UUID orderId, String productCode, Integer productQuantity) {
         try {
             return reserveProductsFor(orderId, productCode, productQuantity);
@@ -17,7 +23,7 @@ public class Warehouse {
     }
 
     private boolean reserveProductsFor(UUID orderId, String productCode, Integer productQuantity) throws UnirestException {
-        HttpResponse<String> response = Unirest.post("http://localhost:8181/pickProducts")
+        HttpResponse<String> response = Unirest.post(warehouseEndpoint + "/pickProducts")
                 .field("order_id", orderId)
                 .field("product_code", productCode)
                 .field("product_quantity", productQuantity)

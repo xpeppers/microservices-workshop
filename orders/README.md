@@ -12,6 +12,7 @@ mvn package
 #### How to run the application
 
 `
+export WAREHOUSE_ENDPOINT="http://localhost:8181"
 java -jar target/orders-1.0-SNAPSHOT-jar-with-dependencies.jar
 `
 

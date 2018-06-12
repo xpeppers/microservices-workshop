@@ -8,7 +8,9 @@ import static spark.Spark.post;
 
 public class Router {
     public static void main(String[] args) {
-        Warehouse warehouse = new Warehouse();
+        String warehouseEndpoint = System.getenv("WAREHOUSE_ENDPOINT");
+
+        Warehouse warehouse = new Warehouse(warehouseEndpoint);
         OrderRepository orderRepository = new OrderRepository();
         OrdersController ordersController = new OrdersController(orderRepository, warehouse);
 
