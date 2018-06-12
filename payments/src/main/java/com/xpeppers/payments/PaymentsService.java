@@ -23,7 +23,6 @@ public class PaymentsService {
             return true;
         }
 
-
         return false;
     }
 
