@@ -2,6 +2,9 @@ package com.xpeppers.consumer;
 
 public class Main {
     public static void main(String[] argv) {
-        System.out.println("Hello world");
+        String rabbitMqHost = System.getenv("RABBITMQ_HOST");
+        EventHandler eventHandler = new RabbitMQEventHandler(rabbitMqHost);
+
+        eventHandler.start();
     }
 }
