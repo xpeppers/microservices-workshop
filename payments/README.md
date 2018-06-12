@@ -32,4 +32,18 @@ curl -X POST -d "order_id=42265410-6d7c-11e8-adc0-fa7ae01bbebc" http://localhost
 
 `
 curl localhost:8282/payments
+
+#### Docker
+
+**Build the image**
+
+```
+docker build -t commerce.payments .
+```
+
+**Run the container**
+
+```
+docker run -d --name payments -p 8282:8282 commerce.payments:latest
+```
 `
