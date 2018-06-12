@@ -48,3 +48,17 @@ Response:
     }
 ]
 ```
+
+#### Docker
+
+**Build the image**
+
+```
+docker build -t commerce.orders .
+```
+
+**Run the container**
+
+```
+docker run -d --name orders --env WAREHOUSE_ENDPOINT=<ENDPOINT> -p 4567:4567 commerce.orders:latest
+```
