@@ -44,3 +44,17 @@ Response:
    }
 ]
 ```
+
+#### Docker
+
+**Build the image**
+
+```
+docker build -t commerce.warehouse .
+```
+
+**Run the container**
+
+```
+docker run -d --name warehouse -p 8181:8181 commerce.warehouse:latest
+```
