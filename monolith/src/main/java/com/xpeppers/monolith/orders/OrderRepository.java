@@ -26,8 +26,8 @@ public class OrderRepository {
 
     private Order findById(UUID id) {
         return orders.stream()
-                    .filter(currentOrder -> currentOrder.id().equals(id))
-                    .findFirst()
-                    .orElse(null);
+                .filter(currentOrder -> currentOrder.id().equals(id))
+                .findFirst()
+                .orElse(null);
     }
 }

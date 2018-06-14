@@ -11,7 +11,7 @@ public class Warehouse {
         put("555", 5);
     }};
 
-    private static final List<ReservedProduct> reservedProcucts = new ArrayList<>();
+    private static final List<ReservedProduct> reservedProducts = new ArrayList<>();
 
     public boolean pickProducts(UUID orderId, String productCode, Integer productQuantity) {
         if (isAvailable(productCode, productQuantity)) {
@@ -24,7 +24,7 @@ public class Warehouse {
     private void reserveFor(UUID orderId, String productCode, Integer productQuantity) {
         int updatedProductInventory = products.get(productCode) - productQuantity;
         products.put(productCode, updatedProductInventory);
-        reservedProcucts.add(new ReservedProduct(orderId, productCode, productQuantity));
+        reservedProducts.add(new ReservedProduct(orderId, productCode, productQuantity));
     }
 
     private boolean isAvailable(String productCode, Integer productQuantity) {
