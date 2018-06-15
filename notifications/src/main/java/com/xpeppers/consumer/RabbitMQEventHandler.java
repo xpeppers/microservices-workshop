@@ -5,7 +5,7 @@ import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 
 class RabbitMQEventHandler implements EventHandler {
-    public static final int FIVE_SECONDS = 5000;
+    public static final int EIGHT_SECONDS = 8000;
     private static final String EXCHANGE_NAME = "events";
 
     private String host;
@@ -21,7 +21,7 @@ class RabbitMQEventHandler implements EventHandler {
 
     private void waitForNewEvents() {
         try {
-            Thread.sleep(FIVE_SECONDS);
+            Thread.sleep(EIGHT_SECONDS);
 
             ConnectionFactory factory = new ConnectionFactory();
             factory.setHost(this.host);
